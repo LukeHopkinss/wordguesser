@@ -41,6 +41,8 @@ class WordGuesserApp < Sinatra::Base
   post '/guess' do
     params[:guess].to_s[0]
     ### YOUR CODE HERE ###
+    letter = params[:guess].to_s[0]
+    @game.guess(letter)
     redirect '/show'
   end
 
